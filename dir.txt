@@ -1,0 +1,16 @@
+ Directory of C:\Users\Server_2
+
+03/04/2024  09:37 AM    <DIR>          .
+01/02/2024  01:10 PM    <DIR>          ..
+02/29/2024  06:09 PM    <DIR>          .idlerc
+03/04/2024  09:37 AM    <DIR>          .ssh
+01/25/2024  03:08 PM    <DIR>          .tke
+03/04/2024  05:23 PM    <DIR>          .VirtualBox
+02/15/2024  02:36 PM    <DIR>          .zenmap
+01/02/2024  01:04 PM    <DIR>          Contacts
+01/03/2024  11:39 AM    <DIR>          Documents
+03/05/2024  10:20 AM    <DIR>          Downloads
+01/02/2024  01:04 PM    <DIR>          Favorites
+01/02/2024  01:04 PM    <DIR>          Links
+01/02/2024  01:04 PM    <DIR>          Music
+01/02/2024  01:04 PM    <DIR>          DATA
