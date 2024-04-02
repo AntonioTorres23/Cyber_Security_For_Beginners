@@ -7,47 +7,129 @@ from multiprocessing import Pool
 import shutil
 
 
-def file_mov(fi, directory):
-
+def file_mov_win(fi, directory):
     if platform.system() == 'Windows' or 'windows':
         dest = f"{os.getcwd()}\\{directory}\\{fi}"
         shutil.move(fi, dest)
 
-    elif platform.system() == 'Linux' or 'linux' or 'Darwin' or 'darwin':
+
+def file_mov_uni(fi, directory):
+    if platform.system() == 'Linux' or 'linux' or 'Darwin' or 'darwin':
         dest = f"{os.getcwd()}/{directory}/{fi}"
         shutil.move(fi, dest)
 
 
 def get_dir():
-
     fol = os.listdir(os.getcwd())
 
-    for fi in fol:
-        match fi:
-            case fi if ".log" in fi:
-                ls_fi = [fi]
-                for x in ls_fi:
-                    file_mov(x, "Honey_Pot_Logs")
-            case fi if ".json" in fi:
+    match comp_os:
+
+        case "Windows":
+            for fi in fol:
                 if platform.system() == "Windows" or "windows":
-                    ls_fi = [fi]
-                    for x in ls_fi:
-                        file_mov(x, "Nmap_JSONs")
-            case fi if ".pcap" in fi:
-                ls_fi = [fi]
-                for x in ls_fi:
-                    file_mov(x, "Pyshark_PCAPs")
-            case fi if "Output_From_Ping_Sweep" in fi:
-                ls_fi = [fi]
-                for x in ls_fi:
-                    file_mov(x, "Ping_Sweeps")
+                    match fi:
+                        case fi if ".log" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_win(x, "Honey_Pot_Logs")
+                        case fi if ".json" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_win(x, "Nmap_JSONs")
+                        case fi if ".pcap" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_win(x, "Pyshark_PCAPs")
+                        case fi if "Output_From_Ping_Sweep" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_win(x, "Ping_Sweeps")
+        case "Linux":
+            for fi in fol:
+                if platform.system() == "Linux" or "linux" or "Darwin" or "darwin":
+                    match fi:
+                        case fi if ".log" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Honey_Pot_Logs")
+                        case fi if ".json" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Nmap_JSONs")
+                        case fi if ".pcap" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Pyshark_PCAPs")
+                        case fi if "Output_From_Ping_Sweep" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Ping_Sweeps")
+        case "linux":
+            for fi in fol:
+                if platform.system() == "Linux" or "linux" or "Darwin" or "darwin":
+                    match fi:
+                        case fi if ".log" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Honey_Pot_Logs")
+                        case fi if ".json" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Nmap_JSONs")
+                        case fi if ".pcap" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Pyshark_PCAPs")
+                        case fi if "Output_From_Ping_Sweep" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Ping_Sweeps")
+        case "Darwin":
+            for fi in fol:
+                if platform.system() == "Linux" or "linux" or "Darwin" or "darwin":
+                    match fi:
+                        case fi if ".log" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Honey_Pot_Logs")
+                        case fi if ".json" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Nmap_JSONs")
+                        case fi if ".pcap" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Pyshark_PCAPs")
+                        case fi if "Output_From_Ping_Sweep" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Ping_Sweeps")
+        case "darwin":
+            for fi in fol:
+                if platform.system() == "Linux" or "linux" or "Darwin" or "darwin":
+                    match fi:
+                        case fi if ".log" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Honey_Pot_Logs")
+                        case fi if ".json" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Nmap_JSONs")
+                        case fi if ".pcap" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Pyshark_PCAPs")
+                        case fi if "Output_From_Ping_Sweep" in fi:
+                            ls_fi = [fi]
+                            for x in ls_fi:
+                                file_mov_uni(x, "Ping_Sweeps")
 
 
 netmap = nmap.PortScanner()
 
 
 def the_scan(addr, what_ports, options):
-
     netmap.scan(hosts=addr, ports=what_ports, arguments=options)
 
     for host in netmap.all_hosts():
