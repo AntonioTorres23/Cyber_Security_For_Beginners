@@ -1,0 +1,29 @@
+Hello and Welcome to Some Additional Documentation on How to Install Packages For This Project:
+
+Some Reminders: 
+
+  - A lot of this project is built upon packages that are not prepackaged with a standard python install. 
+
+  - This may cause a lot of frustration for some users (It certainly caused me some).
+
+Using the Venv:
+
+  - I highly advise NOT TO USE THE VENV TO RUN THIS PROJECT. 
+
+  - After some research, Virtual Environments are great for individuals who want a separate workspace for their python projects on their own computers. 
+  
+  - However, they have a preset config file that has my paths for my computer. You can try to change it to yours, but it is not guaranteed.
+  
+The venv was here to show users what I did to create this project and why it is a good idea for you to use one as well. 
+  
+WHAT I WOULD RECOMMEND:
+  
+  - I recommend using the requirements.txt file to install the packages.
+  
+  - To do so, use the following command: pip install -r .\requirements.txt
+  
+  - You want to use this command inside the Cyber_Security_For_Beginners directory. 
+  
+  - Make sure you have both a version of Python 3.10+ and pip installed on your computer. 
+  
+  - In the next document I’ll cover how to troubleshoot issues that may arise. 
