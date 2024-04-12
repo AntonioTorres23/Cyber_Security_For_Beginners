@@ -1,0 +1,32 @@
+Hello and Welcome to Trouble Shooting Common Issues With Python:
+
+“When I call python from PowerShell, I get an error”:
+
+  - If it’s saying that it doesn’t recognize the command python, check your path environment variables, if the path is there but below other path variables. 
+
+  - Move the variables up to the top. 
+
+  - The path that python is in looks something like this: C:\Users\<User>\AppData\Local\Programs\Python\Python312
+
+  - Then in a new session of command prompt, try typing in python. 
+
+  - You should be brought into the python interpreter. If so, enter exit() to leave the interpreter. 
+
+  - If this doesn’t work, make sure that python is installed. 
+
+  - This is primarily an issue with installing on Windows, for Unix-like OS check that python is installed with your package manager. 
+
+“When I call pip from PowerShell, I get an error”:
+
+  - If it’s saying that it doesn’t recognize the command pip, check your path environment variables, if the path is there but below other path variables. Move the variables up to the top below just below your python path. 
+
+  - The path that pip is in should look something like this: C:\Users\<User>\AppData\Local\Programs\Python\Python312\Scripts
+
+  - Then in a new session of command prompt, try typing in pip. You should see a list of arguments to call from.
+ 
+“Issues with Running Python Scripts on Unix-Like OS”:
+
+  - Try calling the script with what kind python3 and no ./. This tells your OS to run the script using the python interpreter rather than your shell.
+
+  - If you are having issues with permissions while running a script, run the script with this command here: sudo -e python3 <file_name> 
+
