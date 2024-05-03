@@ -26,7 +26,7 @@ Hello and Welcome to Trouble Shooting Common Issues With Python:
  
 “Issues with Running Python Scripts on Unix-Like OS”:
 
-  - Try calling the script with what kind python3 and no ./ This tells your OS to run the script using the python interpreter rather than your shell.
+  - Try calling the script with python3 and no ./ This tells your OS to run the script using the python interpreter rather than your shell.
 
   - If you are having issues with permissions while running a script, run the script with this command here: sudo -e python3 <file_name> 
 
